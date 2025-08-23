@@ -100,16 +100,68 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <article class="card">
-        <h3>Property Management Database System</h3>
-        <p>Designed an operational database for a property management company and answered key business questions (occupancy, maintenance turnaround, utility costs, referrals). Built ERD & schema, enforced constraints and FKs, populated realistic data, and wrote analytics queries and triggers.</p>
-        <p><strong>Deliverables:</strong>
-          <a href="/projects/pms/CreateDB_Table_Query.sql">Schema (DDL)</a> ·
-          <a href="/projects/pms/InsertValues_Query_GroupProject.sql">Sample Data (DML)</a> ·
-          <a href="/projects/pms/DataDictionary.xlsx">Data Dictionary</a> ·
-          <a href="/projects/pms/Group_Project.pdf">Report (PDF)</a>
-        </p>
-      </article>
+     <!-- ——— Project: Property Management Database System ——— -->
+<article class="card" style="display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;">
+  <div>
+    <h3>Database Property Management System</h3>
+    <p style="opacity:.9;margin:.5rem 0 0"><strong>April 2025 – May 2025</strong></p>
+
+    <p style="margin-top:12px;line-height:1.6">
+      Built a complete SQL-based data management system for a property management company.
+      The project included designing an operational OLTP database, enforcing referential integrity,
+      creating a star-schema for analytics, and delivering insights on occupancy, maintenance,
+      and costs. Developed DDL/DML scripts, data dictionary, and analytical queries to
+      answer business questions.
+    </p>
+
+    <p style="margin-top:10px"><strong>Key Contributions</strong></p>
+    <ul style="margin:8px 0 14px 18px">
+      <li>Modeled entities and relationships: Buildings, Apartments, Leases, Staff, Clients, Inspections, Maintenance.</li>
+      <li>Implemented DDL/DML with primary keys, foreign keys, CHECK constraints, and triggers.</li>
+      <li>Populated the database with realistic sample data and tested with SELECT queries.</li>
+      <li>Wrote analytics SQL (occupancy %, unresolved feedback, turnaround time, utility costs).</li>
+    </ul>
+
+    <p><strong>Deliverables</strong>:
+      <a href="/sql/CreateDB_Table_Query.sql" target="_blank">Schema DDL</a> ·
+      <a href="/sql/InsertValues_Query_GroupProject.sql" target="_blank">Sample Data DML</a> ·
+      <a href="/sql/DataDictionary.xlsx" target="_blank">Data Dictionary</a> ·
+      <a href="/sql/Project_Report.pdf" target="_blank">Case Study (PDF)</a>
+    </p>
+
+    <details style="margin-top:12px">
+      <summary><strong>Sample Analytical SQL</strong></summary>
+      <pre style="white-space:pre-wrap;padding:10px;background:#0f1115;border-radius:10px;border:1px solid #222;overflow:auto">
+-- Occupancy rate by building
+SELECT b.Building_ID,
+       ROUND(SUM(CASE WHEN CURDATE() BETWEEN l.Start_Date AND l.End_Date THEN 1 ELSE 0 END)
+             / NULLIF(COUNT(DISTINCT a.Apartment_ID),0), 3) AS occupancy_rate
+FROM BUILDING b
+JOIN APARTMENT a ON a.Building_ID = b.Building_ID
+LEFT JOIN LEASE l ON l.Apartment_ID = a.Apartment_ID
+                 AND l.Building_ID = a.Building_ID
+GROUP BY b.Building_ID;
+
+-- Average maintenance request turnaround (days)
+SELECT Request_Type,
+       ROUND(AVG(DATEDIFF(Completion_Date, Request_Date)), 2) AS avg_days
+FROM MAINTENANCE_REQUEST
+WHERE Completion_Date IS NOT NULL
+GROUP BY Request_Type;
+      </pre>
+    </details>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <img src="/sql/pms_occupancy.png" alt="Occupancy by building"
+         style="width:100%;border-radius:12px;border:1px solid #333">
+    <img src="/sql/pms_maint_donut.png" alt="Maintenance requests by type"
+         style="width:100%;border-radius:12px;border:1px solid #333">
+    <img src="/sql/pms_schema_overview.png" alt="Schema overview"
+         style="width:100%;border-radius:12px;border:1px solid #333">
+  </div>
+</article>
+
     </section>
 
 <section id="certs">
