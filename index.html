@@ -47,6 +47,8 @@
 .project-grid img {
   max-height: 260px;  /* keeps images consistent size like SQL project */
 }
+    .stack-visuals{display:flex;flex-direction:column;gap:12px}
+
 
   </style>
 </head>
@@ -159,25 +161,24 @@
 </article>
 
      <!-- ——— Project: Property Management Database System ——— -->
-<article class="card" style="display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;">
+<article class="card" id="proj-sql-pms">
   <div>
     <h3>Database Property Management System</h3>
     <p style="opacity:.9;margin:.5rem 0 0"><strong>April 2025 – May 2025</strong></p>
 
     <p style="margin-top:12px;line-height:1.6">
       Built a complete SQL-based data management system for a property management company.
-      The project included designing an operational OLTP database, enforcing referential integrity,
-      creating a star-schema for analytics, and delivering insights on occupancy, maintenance,
-      and costs. Developed DDL/DML scripts, data dictionary, and analytical queries to
-      answer business questions.
+      Modeled an operational OLTP schema, enforced referential integrity and constraints,
+      and created a star-style analytical layer for reporting on occupancy, maintenance, and costs.
+      Wrote DDL/DML, generated a data dictionary, and produced analytical queries for insights.
     </p>
 
-    <p style="margin-top:10px"><strong>Key Contributions</strong></p>
+    <p><strong>Key Contributions</strong></p>
     <ul style="margin:8px 0 14px 18px">
-      <li>Modeled entities and relationships: Buildings, Apartments, Leases, Staff, Clients, Inspections, Maintenance.</li>
-      <li>Implemented DDL/DML with primary keys, foreign keys, CHECK constraints, and triggers.</li>
-      <li>Populated the database with realistic sample data and tested with SELECT queries.</li>
-      <li>Wrote analytics SQL (occupancy %, unresolved feedback, turnaround time, utility costs).</li>
+      <li>Designed entities/relationships: Buildings, Apartments, Leases, Staff, Clients, Inspections, Maintenance.</li>
+      <li>Implemented primary/foreign keys, CHECK constraints, and triggers.</li>
+      <li>Populated the database with realistic sample data and validated with SELECT queries.</li>
+      <li>Built analytical SQL for occupancy %, turnaround time, and utility costs.</li>
     </ul>
 
     <p><strong>Deliverables</strong>:
@@ -186,41 +187,32 @@
       <a href="/sql/DataDictionary.xlsx" target="_blank">Data Dictionary</a> ·
       <a href="/sql/Project_Report.pdf" target="_blank">Case Study (PDF)</a>
     </p>
-
-    <details style="margin-top:12px">
-      <summary><strong>Sample Analytical SQL</strong></summary>
-      <pre style="white-space:pre-wrap;padding:10px;background:#0f1115;border-radius:10px;border:1px solid #222;overflow:auto">
--- Occupancy rate by building
-SELECT b.Building_ID,
-       ROUND(SUM(CASE WHEN CURDATE() BETWEEN l.Start_Date AND l.End_Date THEN 1 ELSE 0 END)
-             / NULLIF(COUNT(DISTINCT a.Apartment_ID),0), 3) AS occupancy_rate
-FROM BUILDING b
-JOIN APARTMENT a ON a.Building_ID = b.Building_ID
-LEFT JOIN LEASE l ON l.Apartment_ID = a.Apartment_ID
-                 AND l.Building_ID = a.Building_ID
-GROUP BY b.Building_ID;
-
--- Average maintenance request turnaround (days)
-SELECT Request_Type,
-       ROUND(AVG(DATEDIFF(Completion_Date, Request_Date)), 2) AS avg_days
-FROM MAINTENANCE_REQUEST
-WHERE Completion_Date IS NOT NULL
-GROUP BY Request_Type;
-      </pre>
-    </details>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:12px">
-    <img src="/sql/pms_occupancy.png" alt="Occupancy by building"
-         style="width:100%;border-radius:12px;border:1px solid #333">
-    <img src="/sql/pms_maint_donut.png" alt="Maintenance requests by type"
-         style="width:100%;border-radius:12px;border:1px solid #333">
-<img src="/sql/pms_erd.png" alt="ER Diagram"
-     style="width:100%;border-radius:12px;border:1px solid #333">
+  <!-- visuals stacked just like the EDA card -->
+  <div class="stack-visuals">
+    <figure>
+      <a href="/sql/pms_occupancy.png" target="_blank">
+        <img src="/sql/pms_occupancy.png" alt="Occupancy by building (illustrative)" class="project-visual">
+      </a>
+      <figcaption>Occupancy rate by building (illustrative)</figcaption>
+    </figure>
 
+    <figure>
+      <a href="/sql/pms_maint_donut.png" target="_blank">
+        <img src="/sql/pms_maint_donut.png" alt="Maintenance requests by type" class="project-visual">
+      </a>
+      <figcaption>Maintenance requests by type</figcaption>
+    </figure>
+
+    <figure>
+      <a href="/sql/pms_schema_overview.png" target="_blank">
+        <img src="/sql/pms_schema_overview.png" alt="Schema overview" class="project-visual">
+      </a>
+      <figcaption>Schema overview</figcaption>
+    </figure>
   </div>
 </article>
-
     </section>
 
 <section id="certs">
