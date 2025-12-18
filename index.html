@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Syed Hashim Ali Gilani — Portfolio</title>
   <meta name="description" content="Data Analyst | MS in Business Analytics | Senior IT Assistant @ Sac State" />
+
   <style>
     :root{
       --bg:#0f1115; --bg2:#141823; --card:#171b26; --text:#e6e8ee; --muted:#a7b0c0;
-      --brand:#ffd54a; --brand-2:#ffb300; --accent:#47a3ff; --ring:rgba(255,213,74,.25);
+      --brand:#ffd54a; --accent:#47a3ff; --ring:rgba(255,213,74,.25);
     }
     *{box-sizing:border-box}
     body{
@@ -51,14 +52,14 @@
     section{padding:40px 16px;border-top:1px solid #1f2433}
     h2{font-size:28px;margin:0 0 16px}
     h3{margin:0 0 8px;font-size:20px}
+
     .card{
       background:var(--card);border:1px solid #222838;border-radius:16px;
       padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)
     }
-    ul{margin:8px 0 0 20px}
-    .footer{padding:40px 16px;color:#8d98aa;text-align:center}
 
-    /* project images (as before) */
+    ul{margin:8px 0 0 20px}
+
     .project-visual {
       max-width: 100%;
       max-height: 260px;
@@ -69,302 +70,287 @@
       margin: 0 auto;
       object-fit: contain;
     }
+
+    .cert-img {
+      max-width: 700px;
+      width:100%;
+      border-radius:12px;
+      border:1px solid #333;
+      box-shadow:0 6px 24px rgba(0,0,0,.25);
+      display:block;
+      margin:0 auto 12px auto;
+    }
+
     .stack-visuals{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      margin-top:14px;
+      display:flex;flex-direction:column;gap:12px;margin-top:14px
     }
-    figure{margin:0}
-    figcaption{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:4px;
-      text-align:center;
-    }
+
+    figcaption{font-size:12px;color:var(--muted);margin-top:4px;text-align:center}
+    .footer{padding:40px 16px;color:#8d98aa;text-align:center}
   </style>
 </head>
 <body>
 
-  <header class="container hero center">
-    <img class="avatar" src="/assets/img/headshot.jpg" alt="Syed Hashim Ali Gilani" />
-    <h1>Syed Hashim Ali Gilani</h1>
-    <div class="tagline">
-      Data Analyst | MS in Business Analytics | Senior IT Assistant @ Sac State
+<header class="container hero center">
+  <img class="avatar" src="/assets/img/headshot.jpg" alt="Syed Hashim Ali Gilani" />
+  <h1>Syed Hashim Ali Gilani</h1>
+
+  <div class="tagline">
+    Data Analyst | MS in Business Analytics | Senior IT Assistant @ Sac State
+  </div>
+
+  <div class="btns">
+    <a class="btn" href="https://github.com/hashimgilani" target="_blank">My GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/syedhashimgilani/" target="_blank">My LinkedIn</a>
+    <a class="btn" href="#projects">Projects</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="chip" href="#about">About</a>
+    <a class="chip" href="#skills">Skills</a>
+    <a class="chip" href="#projects">Projects</a>
+    <a class="chip" href="#certs">Certifications</a>
+    <a class="chip" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    <p>
+      I am a Business Analytics graduate student with hands-on experience in data analysis,
+      dashboard development, IT operations, and project coordination. My background combines
+      strong analytical skills with leadership experience gained through IT support, technical
+      reporting, and managing cross-functional projects.
+    </p>
+    <p>
+      In my role as a Senior IT Assistant at Sac State, I lead and train junior staff, streamline
+      technology workflows, and create data-driven Power BI dashboards to support decision making.
+      I’ve also designed SQL-based data management systems, built OLTP schemas, and developed
+      analytical reports for operational efficiency.
+    </p>
+    <p>
+      Beyond analytics, I have project management experience coordinating timelines, deliverables,
+      and communication strategies. My work includes analytics dashboards, GenAI adoption analysis,
+      SQL systems, and machine learning projects involving NLP and AWS services.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:flex-start;">
+      
+      <div>
+        <h3>Python</h3>
+        <p>Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost</p>
+      </div>
+
+      <div>
+        <h3>SQL</h3>
+        <p>PostgreSQL, MySQL, ETL, Star Schema, Data Warehousing</p>
+      </div>
+
+      <div>
+        <h3>R</h3>
+        <p>EDA, Regression, Hypothesis Testing</p>
+      </div>
+
+      <div>
+        <h3>Cloud</h3>
+        <p>AWS (S3, Redshift, SageMaker, Rekognition)</p>
+      </div>
+
+      <div>
+        <h3>Tools</h3>
+        <p>Excel, Power BI, Tableau, Looker Studio, Power Apps, Power Automate, Dataverse</p>
+      </div>
+
     </div>
-    <div class="btns">
-      <a class="btn" href="https://github.com/hashimgilani" target="_blank">My GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/syedhashimgilani/" target="_blank">My LinkedIn</a>
-      <a class="btn" href="#projects">Projects</a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <!-- Project 1: GENAI -->
+  <article class="card">
+    <h3>Enterprise GenAI Adoption — Exploratory Data Analysis</h3>
+    <p>
+      Conducted an exploratory analysis on 100k+ enterprise AI adoption records to uncover trends
+      in industry adoption, training, productivity impacts, and workforce behavior.
+    </p>
+
+    <ul>
+      <li>Performed detailed EDA including distributions, correlations, and regression diagnostics.</li>
+      <li>Built baseline and stepwise regression models to identify key predictors.</li>
+      <li>Delivered insights through a structured report and visual summaries.</li>
+    </ul>
+
+    <div class="stack-visuals">
+      <figure>
+        <img src="/eda/eda_counts.png" class="project-visual">
+        <figcaption>Distribution charts</figcaption>
+      </figure>
+      <figure>
+        <img src="/eda/eda_corr.png" class="project-visual">
+        <figcaption>Correlation matrix</figcaption>
+      </figure>
+      <figure>
+        <img src="/eda/eda_stepwise.png" class="project-visual">
+        <figcaption>Stepwise regression</figcaption>
+      </figure>
     </div>
-  </header>
+  </article>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="chip" href="#about">About</a>
-      <a class="chip" href="#skills">Skills</a>
-      <a class="chip" href="#projects">Projects</a>
-      <a class="chip" href="#certs">Certifications</a>
-      <a class="chip" href="#contact">Contact</a>
+  <!-- Project 2: SQL DB -->
+  <article class="card">
+    <h3>Database Property Management System — SQL</h3>
+    <p>
+      Designed a complete OLTP + analytical SQL database for tracking occupancy, maintenance,
+      leasing, and operational costs for a property management company.
+    </p>
+
+    <ul>
+      <li>Created full ERD, tables, constraints, and triggers.</li>
+      <li>Developed analytical SQL for KPIs such as occupancy %, maintenance load, and turnaround time.</li>
+      <li>Built a star-schema layer for reporting and analysis.</li>
+    </ul>
+
+    <div class="stack-visuals">
+      <figure>
+        <img src="/sql/pms_erd.png" class="project-visual">
+        <figcaption>Entity-Relationship Diagram</figcaption>
+      </figure>
+      <figure>
+        <img src="/sql/pms_occupancy.png" class="project-visual">
+        <figcaption>Occupancy KPIs</figcaption>
+      </figure>
+      <figure>
+        <img src="/sql/pms_maint_donut.png" class="project-visual">
+        <figcaption>Maintenance breakdown</figcaption>
+      </figure>
     </div>
-  </nav>
+  </article>
 
-  <main class="container">
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About</h2>
-      <div class="card">
-        <p>
-          I am a Business Analytics graduate student with hands-on experience in data analysis,
-          dashboard development, IT operations, and project coordination. My background combines
-          strong analytical skills with leadership experience gained through IT support, technical
-          reporting, and managing cross-functional projects.
-        </p>
-        <p>
-          In my role as a Senior IT Assistant at Sac State, I lead and train junior staff, streamline
-          technology workflows, and create data-driven Power BI dashboards to support decision making.
-          I’ve also designed SQL-based data management systems, built OLTP schemas, and developed
-          analytical reports for operational efficiency.
-        </p>
-        <p>
-          Beyond analytics, I have project management experience coordinating timelines, deliverables,
-          and communication strategies using tools like SharePoint, Asana, and Salesforce. My project
-          work covers analytics dashboards, GenAI adoption analysis, SQL database systems, and
-          machine learning projects including NLP and AWS cloud services. More examples are available
-          on my GitHub portfolio.
-        </p>
-      </div>
-    </section>
+  <!-- Project 3: ML Loan Default -->
+  <article class="card">
+    <h3>Loan Default Risk — Logistic Regression</h3>
+    <p>
+      Developed an interpretable machine learning model to assess the likelihood of loan default,
+      enabling data-driven risk management.
+    </p>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="card">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:flex-start;">
-          <div>
-            <h3>Python</h3>
-            <p>Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost</p>
-          </div>
-          <div>
-            <h3>SQL</h3>
-            <p>PostgreSQL, MySQL, ETL pipelines, Star Schema, Data Warehousing</p>
-          </div>
-          <div>
-            <h3>R</h3>
-            <p>EDA, Regression, Hypothesis Testing, Statistical Modeling</p>
-          </div>
-          <div>
-            <h3>Cloud</h3>
-            <p>AWS (S3, Redshift, SageMaker, Rekognition)</p>
-          </div>
-          <div>
-            <h3>Tools</h3>
-            <p>Excel, Power BI, Tableau, Looker Studio, Power Apps, Power Automate, Dataverse, SharePoint, Salesforce</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ul>
+      <li>Handled imbalance using class weights and threshold tuning.</li>
+      <li>Evaluated performance using ROC-AUC, precision/recall, and confusion matrix.</li>
+      <li>Provided business-driven interpretation of coefficients and odds ratios.</li>
+    </ul>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <div class="stack-visuals">
+      <figure>
+        <img src="/ml/download.png" class="project-visual">
+        <figcaption>Model output: Approval vs. Rejection</figcaption>
+      </figure>
+    </div>
+  </article>
 
-      <!-- Project 1: GenAI EDA -->
-      <article class="card" id="proj-genai-eda">
-        <h3>Enterprise GenAI Adoption — Exploratory Data Analysis</h3>
-        <p style="opacity:.9;margin:.5rem 0 0"><strong>2024–2025</strong></p>
+  <!-- Project 4: Tableau HR Analytics Dashboard -->
+  <article class="card">
+    <h3>HR Analytics Dashboard — Tableau</h3>
+    <p>
+      Designed an interactive Tableau dashboard to monitor employee attrition, demographics,
+      job satisfaction, and workforce trends for HR decision-making.
+    </p>
 
-        <p style="margin-top:12px;line-height:1.6">
-          Conducted exploratory data analysis (EDA) on a dataset of 100k+ records (2022–2024),
-          covering industries, countries, and AI tools adopted. Analyzed adoption timelines,
-          workforce impact, training hours, and productivity change using R and regression diagnostics.
-        </p>
+    <ul>
+      <li>Visualized KPIs: employee count, attrition rate, average age, and active workforce.</li>
+      <li>Built charts for department-wise attrition, age-group distribution, and education-level attrition.</li>
+      <li>Included gender-based attrition and job satisfaction scoring to highlight retention risks.</li>
+    </ul>
 
-        <p><strong>Key Contributions</strong></p>
-        <ul style="margin:8px 0 14px 18px">
-          <li>Analyzed adoption trends across industries and countries.</li>
-          <li>Produced distributions, correlation heatmaps, and stepwise regression models.</li>
-          <li>Summarized insights in a professional report and presentation.</li>
-        </ul>
+    <div class="stack-visuals">
+      <figure>
+        <img src="/assets/img/HR_Dashboard.png" class="project-visual">
+        <figcaption>Interactive HR dashboard built in Tableau</figcaption>
+      </figure>
+    </div>
+  </article>
 
-        <p><strong>Deliverables:</strong>
-          <a href="/eda/genai_enterprise.csv" target="_blank">Dataset (CSV)</a> ·
-          <a href="/eda/genai_ed.rmd" target="_blank">RMarkdown</a> ·
-          <a href="/eda/genai_eda_report.pdf" target="_blank">EDA Report (PDF)</a> ·
-          <a href="/eda/genai_regression_report.pdf" target="_blank">Regression Report (PDF)</a>
-        </p>
+  <p style="margin-top:28px;text-align:center;color:var(--muted);font-size:14px">
+    More projects and work in progress are available on my
+    <a href="https://github.com/hashimgilani" target="_blank">GitHub</a>.
+  </p>
 
-        <div class="stack-visuals">
-          <figure>
-            <img src="/eda/eda_counts.png" alt="EDA counts & distributions" class="project-visual">
-            <figcaption>Distributions &amp; counts by industry, country, tool</figcaption>
-          </figure>
-          <figure>
-            <img src="/eda/eda_corr.png" alt="Correlation heatmap" class="project-visual">
-            <figcaption>Correlation heatmap</figcaption>
-          </figure>
-          <figure>
-            <img src="/eda/eda_stepwise.png" alt="Stepwise regression summary" class="project-visual">
-            <figcaption>Stepwise regression results</figcaption>
-          </figure>
-        </div>
-      </article>
+</section>
 
-      <!-- Project 2: SQL Property Management -->
-      <article class="card" id="proj-sql-pms">
-        <h3>Database Property Management System</h3>
-        <p style="opacity:.9;margin:.5rem 0 0"><strong>April 2025 – May 2025</strong></p>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <h2>Certifications</h2>
+  <div class="card">
 
-        <p style="margin-top:12px;line-height:1.6">
-          Built a complete SQL-based data management system for a property management company.
-          Modeled an operational OLTP schema, enforced referential integrity and constraints,
-          and created a star-style analytical layer for reporting on occupancy, maintenance, and costs.
-        </p>
+    <div class="center" style="margin-bottom:40px">
+      <p><strong>Google Data Analytics Professional Certificate</strong></p>
+      <a href="/assets/certs/Google_Data_Analytics.jpg" target="_blank">
+        <img src="/assets/certs/Google_Data_Analytics.jpg" class="cert-img" />
+      </a>
+    </div>
 
-        <p><strong>Key Contributions</strong></p>
-        <ul style="margin:8px 0 14px 18px">
-          <li>Designed entities/relationships for buildings, apartments, leases, staff, clients, inspections, and maintenance.</li>
-          <li>Implemented primary/foreign keys, CHECK constraints, and triggers.</li>
-          <li>Populated the database with realistic sample data and validated with SELECT queries.</li>
-          <li>Built analytical SQL for occupancy %, turnaround time, and utility costs.</li>
-        </ul>
+    <hr style="border:none;border-top:1px solid #222;margin:24px 0">
 
-        <p><strong>Deliverables:</strong>
-          <a href="/sql/CreateDB_Table_Query.sql" target="_blank">Schema DDL</a> ·
-          <a href="/sql/InsertValues_Query_GroupProject.sql" target="_blank">Sample Data DML</a> ·
-          <a href="/sql/DataDictionary.xlsx" target="_blank">Data Dictionary</a> ·
-          <a href="/sql/Project_Report.pdf" target="_blank">Case Study (PDF)</a>
-        </p>
+    <div class="center" style="margin-bottom:40px">
+      <p><strong>Google Business Intelligence Professional Certificate</strong></p>
+      <a href="/assets/certs/BI CERT.pdf" target="_blank">
+        <img src="/assets/certs/Google_BI.png" class="cert-img" />
+      </a>
+    </div>
 
-        <div class="stack-visuals">
-          <figure>
-            <a href="/sql/pms_occupancy.png" target="_blank">
-              <img src="/sql/pms_occupancy.png" alt="Occupancy by building" class="project-visual">
-            </a>
-            <figcaption>Occupancy rate by building</figcaption>
-          </figure>
-          <figure>
-            <a href="/sql/pms_maint_donut.png" target="_blank">
-              <img src="/sql/pms_maint_donut.png" alt="Maintenance requests by type" class="project-visual">
-            </a>
-            <figcaption>Maintenance requests by type</figcaption>
-          </figure>
-          <figure>
-            <a href="/sql/pms_erd.png" target="_blank">
-              <img src="/sql/pms_erd.png" alt="Entity-Relationship Diagram" class="project-visual">
-            </a>
-            <figcaption>Entity-Relationship Diagram</figcaption>
-          </figure>
-        </div>
-      </article>
+    <hr style="border:none;border-top:1px solid #222;margin:24px 0">
 
-      <!-- Project 3: ML Loan Default -->
-      <article class="card" id="proj-ml-loan">
-        <h3>Loan Default Risk — Logistic Regression</h3>
-        <p>
-          Built a baseline machine learning model to estimate the probability that a small business
-          loan will default using a historical SBA dataset. Focused on interpretability, class imbalance,
-          and business implications of different risk thresholds.
-        </p>
+    <div class="center" style="margin-bottom:40px">
+      <p><strong>AWS Cloud Foundations</strong></p>
+      <a href="/assets/certs/AWS_CloudFoundation.pdf" target="_blank">
+        <img src="/assets/certs/AWS Cloud Foundations.png" class="cert-img" />
+      </a>
+    </div>
 
-        <ul>
-          <li><strong>Methods:</strong> logistic regression, regularization, class weights / threshold tuning,
-              k-fold cross-validation, ROC-AUC, confusion matrix.</li>
-          <li><strong>Focus:</strong> interpretable coefficients &amp; odds ratios, approval policy implications, and risk cutoffs.</li>
-          <li><strong>Outcome:</strong> baseline risk scoring framework to balance approval rate and default risk.</li>
-        </ul>
+    <hr style="border:none;border-top:1px solid #222;margin:24px 0">
 
-        <p><strong>Deliverables:</strong>
-          <a href="/ml/sba_report.ipynb" target="_blank" rel="noopener">Notebook (ipynb)</a> ·
-          <a href="/ml/sba_case_brief.pdf" target="_blank" rel="noopener">Case Brief</a> ·
-          <a href="/ml/sba_dataset.csv" download>Dataset (CSV)</a>
-        </p>
+    <div class="center">
+      <p><strong>AWS Machine Learning Foundations</strong></p>
+      <a href="/assets/certs/AWS_MLFoundations.pdf" target="_blank">
+        <img src="/assets/certs/AWS Machine Learning.png" class="cert-img" />
+      </a>
+    </div>
 
-        <div class="stack-visuals">
-          <figure>
-            <a href="/ml/download.png" target="_blank">
-              <img src="/ml/download.png" alt="Loan approval decision chart" class="project-visual">
-            </a>
-            <figcaption>Loan approval vs. rejection (model output)</figcaption>
-          </figure>
-        </div>
-      </article>
+  </div>
+</section>
 
-      <p style="margin-top:28px;text-align:center;color:var(--muted);font-size:14px">
-        More projects and work in progress are available on my
-        <a href="https://github.com/hashimgilani" target="_blank">GitHub</a>.
-      </p>
-    </section>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card center">
+    <p>📧 <a href="mailto:hashimgilani331@gmail.com">hashimgilani331@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/syedhashimgilani/" target="_blank">LinkedIn</a></p>
+    <p>💻 <a href="https://github.com/hashimgilani" target="_blank">GitHub</a></p>
+  </div>
+</section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <h2>Certifications</h2>
-      <div class="card">
+</main>
 
-        <!-- Google DA -->
-        <div class="center" style="margin-bottom:28px">
-          <p><strong>Google Data Analytics Professional Certificate</strong></p>
-          <a href="/assets/certs/Google_Data_Analytics.jpg" target="_blank">
-            <img src="/assets/certs/Google_Data_Analytics.jpg"
-                 alt="Google Data Analytics Certificate"
-                 style="max-width:700px;width:100%;border-radius:12px;border:1px solid #333;box-shadow:0 6px 24px rgba(0,0,0,.25)" />
-          </a>
-        </div>
+<footer class="footer">© <span id="y"></span> Syed Hashim Ali Gilani</footer>
 
-        <hr style="border:none;border-top:1px solid #222;margin:24px 0">
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 
-        <!-- Google BI -->
-        <div class="center" style="margin-bottom:28px">
-          <p><strong>Google Business Intelligence Professional Certificate</strong></p>
-          <a href="/assets/certs/BI CERT.pdf" target="_blank">
-            <img src="/assets/certs/Google_BI.png"
-                 alt="Google BI Certificate"
-                 style="max-width:700px;width:100%;border-radius:12px;border:1px solid #333;box-shadow:0 6px 24px rgba(0,0,0,.25)" />
-          </a>
-        </div>
-
-        <hr style="border:none;border-top:1px solid #222;margin:24px 0">
-
-        <!-- AWS Cloud Foundations -->
-        <div class="center" style="margin-bottom:28px">
-          <p><strong>AWS Cloud Foundations</strong></p>
-          <a href="/assets/certs/AWS_CloudFoundation.pdf" target="_blank">
-            <img src="/assets/certs/AWS Cloud Foundations.png"
-                 alt="AWS Cloud Foundations Certificate"
-                 style="max-width:700px;width:100%;border-radius:12px;border:1px solid #333;box-shadow:0 6px 24px rgba(0,0,0,.25)" />
-          </a>
-        </div>
-
-        <hr style="border:none;border-top:1px solid #222;margin:24px 0">
-
-        <!-- AWS ML Foundations -->
-        <div class="center">
-          <p><strong>AWS Machine Learning Foundations</strong></p>
-          <a href="/assets/certs/AWS_MLFoundations.pdf" target="_blank">
-            <img src="/assets/certs/AWS Machine Learning.png"
-                 alt="AWS Machine Learning Foundations Certificate"
-                 style="max-width:700px;width:100%;border-radius:12px;border:1px solid #333;box-shadow:0 6px 24px rgba(0,0,0,.25)" />
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card center">
-        <p>📧 <a href="mailto:hashimgilani331@gmail.com">hashimgilani331@gmail.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/in/syedhashimgilani/" target="_blank">LinkedIn</a></p>
-        <p>💻 <a href="https://github.com/hashimgilani" target="_blank">GitHub</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">© <span id="y"></span> Syed Hashim Ali Gilani</footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
